@@ -8,7 +8,7 @@ const localFeedbackKey = "feedback-form-state";
 
 let email;
 let message;
-const formInput = {};
+let formInput = {};
 
 function handlerInput(event) {
     
@@ -28,6 +28,7 @@ form.addEventListener("submit", handlerSubmit);
 function handlerSubmit(event) {
     event.preventDefault();
     console.log(formInput);
+    formInput = {};
     localStorage.removeItem(localFeedbackKey);
     form.reset();
 }
